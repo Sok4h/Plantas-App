@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.plantapp.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addPlant"
+            app:destination="@id/addPlant" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlant"
+        android:name="com.example.plantapp.ui.main.AddPlant"
+        android:label="fragment_add_plant"
+        tools:layout="@layout/fragment_add_plant" >
+        <action
+            android:id="@+id/action_addPlant_to_reminderSetup"
+            app:destination="@id/reminderSetup" />
+    </fragment>
+    <dialog
+        android:id="@+id/reminderSetup"
+        android:name="com.example.plantapp.ui.main.ReminderSetup"
+        android:label="fragment_reminder_setup"
+        tools:layout="@layout/fragment_reminder_setup" >
+        <action
+            android:id="@+id/action_reminderSetup_to_actityOptions"
+            app:destination="@id/actityOptions" />
+    </dialog>
+    <dialog
+        android:id="@+id/actityOptions"
+        android:name="com.example.plantapp.ui.main.ActityOptions"
+        android:label="fragment_actity_options"
+        tools:layout="@layout/fragment_actity_options" >
+        <action
+            android:id="@+id/action_actityOptions_to_reminderSetup"
+            app:destination="@id/reminderSetup"
+            app:popUpTo="@id/reminderSetup" />
+    </dialog>
+</navigation>
